@@ -35,4 +35,5 @@ v.erase(v.begin(), v.begin() + 2); // 删除前两个元素 -> v: [40]
 erase可以设置首尾
 ```
 
-**排序：sort(a.begin(),a.end().cmp),vector没有自己的排序函数**
+**排序：sort(a.begin(),a.end().cmp),vector没有自己的排序函数**  
+**STL之间均可以嵌套**  
