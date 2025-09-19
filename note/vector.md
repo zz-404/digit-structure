@@ -9,7 +9,7 @@ vector<int> vec4(5, 10);
 - cout << v.front(); // 等价于 v[0]，输出第一个元素
 - cout << v.back();  // 等价于 v[v.size()-1]，输出最后一个元素
 - size(): 返回当前 vector 中元素的数量。v.push_back(1); // v: [1]
-- v.pop_back();弹出
+- v.pop_back()push_back;支持对尾元素的修改，**不支持头元素**
 
 ### 插入
 ```
