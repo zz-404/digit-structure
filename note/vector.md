@@ -42,3 +42,22 @@ erase可以设置首尾
 
 
 **在 C++ 中，两个 std::vector 可以直接使用 == 和 != 运算符来比较是否相等，非常方便！**
+
+**vector套vector可以当成二维数组来用**
+```
+class Solution {
+public:
+    vector<vector<int>> generate(int numRows) {
+        vector<vector<int>> ret(numRows);
+        for (int i = 0; i < numRows; ++i) {
+            !!!ret[i].resize(i + 1);
+            ret[i][0] = ret[i][i] = 1;
+            for (int j = 1; j < i; ++j) {
+                ret[i][j] = ret[i - 1][j] + ret[i - 1][j - 1];
+            }
+        }
+        return ret;
+    }
+};
+```
+注意resize函数
