@@ -71,3 +71,69 @@ int main(){
     cout<<ans;
 }
 ```
+```
+#include <iostream>
+#include <stack>
+#include <string>
+#include <cctype>
+
+using namespace std;
+
+// 获取操作符优先级
+int getPriority(char op) {
+    if (op == '+' || op == '-') return 1;
+    if (op == '*' || op == '/') return 2;
+    return 0;  // 其他字符（如括号）
+}
+
+// 中缀转后缀函数
+string infixToPostfix(const string& infix) {
+    stack<char> operators;
+    string postfix = "";
+    
+    for (char ch : infix) {
+        if (isalpha(ch)) {  // 操作数直接输出
+            postfix += ch;
+        }
+        else if (ch == '(') {  // 左括号入栈
+            operators.push(ch);
+        }
+        else if (ch == ')') {  // 右括号：弹出直到左括号
+            while (!operators.empty() && operators.top() != '(') {
+                postfix += operators.top();
+                operators.pop();
+            }
+            operators.pop();  // 弹出左括号
+        }
+        else {  // 操作符
+            while (!operators.empty() && 
+                   getPriority(operators.top()) >= getPriority(ch) && 
+                   operators.top() != '(') {
+                postfix += operators.top();
+                operators.pop();
+            }
+            operators.push(ch);
+        }
+    }
+    
+    // 弹出栈中剩余的操作符
+    while (!operators.empty()) {
+        postfix += operators.top();
+        operators.pop();
+    }
+    
+    return postfix;
+}
+
+int main() {
+    string infix;
+    
+    while (getline(cin, infix)) {
+        string postfix = infixToPostfix(infix);
+        cout << postfix << endl;
+    }
+    
+    return 0;
+}
+```
+**deepseek的方法更加合理，设置了优先级，每次处理都把之前的优先级高的东西处理完毕，同时由于每项相消可以**
