@@ -63,25 +63,6 @@ int main(){
             }
             tok.push(a[i]);
         }
-        // if(i==0){
-        //     ans+=a[i];
-        // }
-        // else if((a[i]>='A'&&a[i]<='Z'||a[i]>='a'&&a[i]<='z')&&i-1>=0&&a[i-1]!='*'&&a[i-1]!='/'){
-        //     ans+=a[i];
-        // }
-        // else if(a[i]=='+'||a[i]=='-'){
-        //     tok.push(a[i]);
-        // }else if(a[i]=='*'||a[i]=='/'){
-        //     ans+=a[i+1];
-        //     tok.push(a[i]);
-        //     while(!tok.empty()){
-        //         ans+=tok.top();
-        //         tok.pop();
-        //     }
-        // }else if(a[i]==')'){
-        //     ans+=tok.top();
-        //     tok.pop();
-        // }
     }
     while(!tok.empty()){
         ans+=tok.top();
