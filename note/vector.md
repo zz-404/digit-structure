@@ -44,6 +44,7 @@ erase可以设置首尾
 **在 C++ 中，两个 std::vector 可以直接使用 == 和 != 运算符来比较是否相等，非常方便！**
 
 **vector套vector可以当成二维数组来用**
+vector<vector<int>> a(s1.length() + 1, vector<int>(s2.length() + 1, 0));
 ```
 class Solution {
 public:
