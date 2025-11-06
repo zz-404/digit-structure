@@ -61,4 +61,6 @@ public:
     }
 };
 ```
-注意resize函数
+**注意resize函数
+vector可以clear吗？
+是的，vector有clear()方法，它可以清空vector中的所有元素，将size设置为0，但capacity保持不变（内存不会释放）。所以直接用resize也是可以的**
