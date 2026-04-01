@@ -2,6 +2,7 @@
 - 可以用来表示类似于，一堆数从小到大排，且知道他们的出现次数，的东西
 - map<int , int , greater<int>>
 - map的迭代器一直有效，特别强大
+- 不能使用j+1
 
 ```
 for (auto it = m.begin(); it != m.end(); ++it) {
